@@ -1,5 +1,8 @@
 package com.varsha.weatherapp.di
 
+import android.app.Application
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.varsha.weatherapp.data.remote.WeatherApi
 import dagger.Module
 import dagger.Provides
@@ -21,5 +24,11 @@ class AppModule {
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
             .create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideFusedLocationProviderClient(app: Application): FusedLocationProviderClient {
+        return LocationServices.getFusedLocationProviderClient(app)
     }
 }
