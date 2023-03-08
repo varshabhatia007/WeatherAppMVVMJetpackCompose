@@ -1,6 +1,8 @@
 package com.varsha.weatherapp.di
 
+import com.varsha.weatherapp.data.location.DefaultLocationTracker
 import com.varsha.weatherapp.data.repository.WeatherRepositoryImpl
+import com.varsha.weatherapp.domain.location.LocationTracker
 import com.varsha.weatherapp.domain.repository.WeatherRepository
 import dagger.Binds
 import dagger.Module
@@ -19,4 +21,8 @@ abstract class RepositoryModule {
     abstract fun bindWeatherRepository(
         weatherRepositoryImpl: WeatherRepositoryImpl
     ): WeatherRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindLocationTracker(defaultLocationTracker: DefaultLocationTracker): LocationTracker
 }
