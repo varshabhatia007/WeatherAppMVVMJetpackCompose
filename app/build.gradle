@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace 'com.varsha.weatherapp'
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.varsha.weatherapp"
-        minSdk 24
-        targetSdk 33
+        minSdk 21
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -39,7 +39,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.2.0'
+        kotlinCompilerExtensionVersion '1.1.1'
     }
     packagingOptions {
         resources {
